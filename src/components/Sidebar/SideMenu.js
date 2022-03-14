@@ -82,9 +82,9 @@ const SideMenu = (props) => {
 
             <div className={`side-menu ${inactive ? 'inactive' : ''}`}>
                 <div className='top-section'>
-                    <div className='logo'>
+                    {/* <div className='logo'>
                         <img src={logo} alt="Egefaz" />
-                    </div>
+                    </div> */}
                     <div onClick={() => setInactive(!inactive)} className='toggle-menu-btn'>
                         <i className={`bi ${inactive ? 'bi-list' : 'bi-x-circle'}`}></i>
                     </div>

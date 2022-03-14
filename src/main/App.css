@@ -28,7 +28,7 @@ body {
 .side-menu {
   position: fixed;
   background-color: #f0f0f0;
-  width: 300px;
+  width: 200px;
   height: 100%;
   box-sizing: border-box;
   padding: 30px 20px;
@@ -88,13 +88,7 @@ body {
 }
 
 @media (max-width: 300px) {
-  .side-menu {
-
-    width: 250px;
-    height: 100%;
-
-  }
-
+  
   .side-menu.inactive .top-section .logo img {
     max-width: 0;
     max-height: 0;
@@ -255,12 +249,12 @@ body {
   height: 1px;
   border-radius: 1px;
   background-color: #1B1936;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 .container {
   
-  margin-left: 300px;
+  margin-left: 200px;
   transition: margin-left .2s ease-in;
   padding: 50px;
   width: 80%;
@@ -281,7 +275,7 @@ body {
   background: rgb(201, 160, 48);
   background: linear-gradient(0deg, rgba(201, 160, 48, 1) 5%, rgba(240, 240, 240, 1) 11%);
   height: 11vh;
-  margin-left: 300px;
+  margin-left: 200px;
   transition: margin-left .2s ease-in;
 
 }
@@ -301,7 +295,7 @@ body {
 
 @media (max-width: 650px) {
   .header{
-    width: calc(100vw + 80px);
+    width: calc(100vw - 80px);
   }
   
   
@@ -315,6 +309,14 @@ body {
   }
   
   
+}
+@media(max-width:990px){
+  .container.inactive{
+    width: 80%;
+  }
+  .container{
+    width: 70%;
+  }
 }
 
 
@@ -424,7 +426,7 @@ body {
   height: 100px;
   width: auto;
   color: #fff;
-  margin-left: 300px;
+  margin-left: 200px;
   transition: all .2s ease-in;
   
 }
@@ -434,6 +436,7 @@ body {
 .footer.inactive .Footer {
 
   margin-left: 80px;
+  
 }
 
 .footer-content {

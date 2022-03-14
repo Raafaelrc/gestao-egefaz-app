@@ -1,5 +1,7 @@
 import React from "react";
 
+import './css/cards.css'
+
 class Cards extends React.Component {
 
     render() {
@@ -8,7 +10,7 @@ class Cards extends React.Component {
 
 
             <div className="card md-3">
-                <div className="card-header">{this.props.title}</div>
+                <div className="card-headerr" >{this.props.title}</div>
                 <div className="card-body">
 
                     {this.props.children}

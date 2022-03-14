@@ -176,7 +176,7 @@ class CadastroFolga extends React.Component {
 
             <div className="container-fluid" style={{ marginBottom: '10%' }}>
 
-                <Cards className="card md-3" title="Cadastro de Folga">
+                <Cards  title="Cadastro de Folga" style={{background:'#1B1936'}}>
 
 
                     <div classname="row">
@@ -211,6 +211,8 @@ class CadastroFolga extends React.Component {
                                             value={this.state.periodoAqui}
                                             onChange={(e) => this.setState({ periodoAqui: e.target.value })} />
                                     </div>
+
+                                   
 
                                     <div className="col">
                                         <label className="la" htmlFor="range">Período Final:*</label>
@@ -257,7 +259,7 @@ class CadastroFolga extends React.Component {
                                 <FormGroup
                                     htmlFor="inputDescricao">
                                     <label className="la" htmlFor="range">Descrição *</label>
-                                    <InputTextarea value={this.state.descricao}
+                                    <InputTextarea style={{width:'100%'}} value={this.state.descricao}
 
                                         onChange={(e) => this.setState({ descricao: e.target.value })}
                                         rows={5} cols={30} autoResize />

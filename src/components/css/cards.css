@@ -1,0 +1,18 @@
+.card-headerr{
+    padding: .5rem 1rem;
+    margin-bottom: 0;
+
+    background: #1B1936;
+    color:#fff;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-radius: 5px 5px 0 0;
+    font-weight: bold;
+ 
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    background: #f0f0f0;
+    box-shadow: 8px 8px 2px 3px #a8a7a7;
+}
