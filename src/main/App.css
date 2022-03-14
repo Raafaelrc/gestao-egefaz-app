@@ -1,0 +1,448 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+  height: 100%;
+  
+  overflow-x: hidden;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #FFF;
+  font-family: sans-serif;
+}
+
+.side-menu {
+  position: fixed;
+  background-color: #f0f0f0;
+  width: 300px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 30px 20px;
+  transition: width .2s ease-in;
+
+}
+
+.side-menu.inactive {
+  width: 80px;
+
+}
+
+.side-menu .top-section {
+  position: relative;
+}
+
+.side-menu .top-section .logo {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.side-menu .top-section .logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+
+
+.side-menu .top-section .toggle-menu-btn {
+  color: #555;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transition: all 0.4s;
+  cursor: pointer;
+  transform: rotate(90deg);
+
+}
+
+
+
+.side-menu.inactive .top-section .toggle-menu-btn {
+  top: 65%;
+  right: 10px;
+  transform: rotate(0deg);
+
+  color: #000;
+  font-size: 20px;
+
+}
+
+@media (max-width: 300px) {
+  .side-menu {
+
+    width: 250px;
+    height: 100%;
+
+  }
+
+  .side-menu.inactive .top-section .logo img {
+    max-width: 0;
+    max-height: 0;
+  }
+
+
+  .side-menu.inactive .top-section .toggle-menu-btn {
+    top: 10%;
+    right: 5px;
+    font-size: 30px;
+    transform: rotate(0deg);
+
+    color: #000;
+
+
+  }
+
+}
+
+
+
+.side-menu .main-menu .menu-item {
+  color: #555;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.side-menu .main-menu .menu-item.active {
+  background: #1B1936;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.side-menu .main-menu {
+  margin: 5px 0;
+}
+
+.side-menu .main-menu .menu-item .menu-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.side-menu .main-menu .menu-item span {
+  position: absolute;
+  display: inline-block;
+  line-height: 40px;
+  opacity: 1;
+  transition: all .2s ease-in;
+
+
+}
+
+.side-menu.inactive .main-menu .menu-item span {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  transition: all .2s ease-in;
+}
+
+.side-menu .main-menu .sub-menu {
+  color: #777;
+  margin-left: 20px;
+  border-left: 1px solid #666;
+  box-sizing: border-box;
+  padding-left: 30px;
+  cursor: pointer;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .2s ease-in;
+}
+
+
+
+.side-menu .main-menu .sub-menu.active {
+  max-height: 200px;
+}
+
+.side-menu .main-menu .sub-menu a {
+  display: block;
+  margin: 5px 0;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #777;
+  box-sizing: border-box;
+  padding: 5px;
+
+}
+
+.side-menu .main-menu .sub-menu a.active {
+  background: #1B1936;
+  display: block;
+
+  border-radius: 5px;
+  color: #FFFFFF;
+}
+
+.side-menu-footer {
+  width: 100%;
+  height: 100px;
+  background: #1B1936;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.side-menu-footer .avatar {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.side-menu-footer .avatar img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-menu-footer .user-info {
+  display: inline-block;
+  margin: 0 10px;
+  color: #f0f0f0;
+  position: absolute;
+  opacity: 1;
+  transition: opacity .2s ease-in;
+}
+
+.side-menu.inactive .side-menu-footer .user-info {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+
+.side-menu-footer .user-info h5 {
+  font-size: 15px;
+}
+
+.side-menu-footer .user-info p {
+  font-size: 14px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  border-radius: 1px;
+  background-color: #1B1936;
+  margin-top: 15px;
+}
+
+.container {
+  
+  margin-left: 300px;
+  transition: margin-left .2s ease-in;
+  padding: 50px;
+  width: 80%;
+  transition: all 0.2s ease-in;
+}
+
+.container.inactive {
+  margin-left: 100px;
+  width: 100%;
+  transition: all 0.2s ease-in;
+
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(201, 160, 48);
+  background: linear-gradient(0deg, rgba(201, 160, 48, 1) 5%, rgba(240, 240, 240, 1) 11%);
+  height: 11vh;
+  margin-left: 300px;
+  transition: margin-left .2s ease-in;
+
+}
+
+.header.inactive {
+  margin-left: 80px;
+}
+
+.header-modulo {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+@media (max-width: 650px) {
+  .header{
+    width: calc(100vw + 80px);
+  }
+  
+  
+}
+@media (max-width: 300px) {
+  .titulo-header{
+    display: none;
+  }
+  .dropdownG{
+    left: 40%;
+  }
+  
+  
+}
+
+
+
+
+/* BOTÃO DROPDAWN DO USUARIO LOGADO */
+/* Dropdown Button */
+
+
+.buttonUser {
+  border-radius: 5px;
+  background-color: #cecece;
+  border: none;
+  color: #000000;
+  text-align: center;
+
+  padding: 5px;
+  width: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 0;
+
+}
+
+.buttonUser span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.buttonUser span:after {
+  content: '\25BE';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.buttonUser:hover span {
+  padding-right: 25px;
+}
+
+.buttonUser:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdownG {
+  position: relative;
+  display: inline-block;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-contentt {
+  display: none;
+  position: absolute;
+  right: 0px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 1;
+
+}
+
+/* Links inside the dropdown */
+.dropdown-contentt a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  /* border-radius: 5px; */
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-contentt a:hover {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdownG:hover .dropdown-contentt {
+  display: block;
+}
+
+/* Change the background color of the dropdown buttonUser when the dropdown content is shown */
+.dropdownG:hover .buttonUser {
+  background-color: #fdca3f;
+}
+
+/* --------------- Footer --------------- */
+
+
+.Footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1B1936;
+  height: 100px;
+  width: auto;
+  color: #fff;
+  margin-left: 300px;
+  transition: all .2s ease-in;
+  
+}
+
+
+
+.footer.inactive .Footer {
+
+  margin-left: 80px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: center;
+  height: 100%;
+  margin: 0 50px;
+}
+
