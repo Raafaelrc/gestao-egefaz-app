@@ -155,22 +155,7 @@ class CadastroFolga extends React.Component {
 
             return data;
         }
-        // const ToggleButtonDemo = () => {
-        //     const [checked1, setChecked1] = useState(false);
-
-
-        //     return (
-        //         <div>
-        //             <div className="card">
-        //                 <h5>Basic</h5>
-        //                 <ToggleButton checked={checked1} onChange={(e) => setChecked1(e.value)} onIcon="pi pi-check" offIcon="pi pi-times" />
-
-        //             </div>
-        //         </div>
-        //     );
-        // }
-
-
+      
 
         return (
 
