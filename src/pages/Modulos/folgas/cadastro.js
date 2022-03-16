@@ -10,8 +10,9 @@ import { succesMessage } from "../../../components/toastr";
 import { errorMessage } from "../../../components/toastr";
 
 
-import './folga.css'
-import './cfolga.css'
+import '../modulos.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class CadastroFolga extends React.Component {
     state = {
@@ -180,7 +181,7 @@ class CadastroFolga extends React.Component {
 
 
                 <div classname="row">
-                    <div style={{background:'#f0f0f0', marginTop: '10vh', border:' 1px solid #f0f0f0', borderRadius:'5px', padding:'10px', boxShadow:'5px 5px 5px #fdca3f' }} >
+                    <div style={{background:'#1B1936', color:'#f0f0f0', marginTop: '10vh', border:' 1px solid #f0f0f0', borderRadius:'5px', padding:'10px', boxShadow:'5px 5px 5px #fdca3f' }} >
                         <h3 >Cadastrar Folga</h3>
                     </div>
 

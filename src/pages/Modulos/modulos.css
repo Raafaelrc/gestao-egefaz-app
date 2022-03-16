@@ -1,8 +1,26 @@
+@media (min-width: 768px) {
 
-.btn-success:hover{
+    .p-md-4 {
+
+        margin-top: 10px;
+        margin-right: 2px;
+        margin-bottom: 40px;
+
+    }
+}
+
+.la {
+    display: block;
+    font-size: 19px;
+    font-style: italic;
+
+}
+
+.btn-success:hover {
     background: #1B1933;
 }
-.la-1{
+
+.la-1 {
     display: block;
     padding: 7px 22px;
     width: 198px;
@@ -20,4 +38,3 @@
 input[type="file"] {
     display: none;
 }
-

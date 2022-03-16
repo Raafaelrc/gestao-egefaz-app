@@ -6,7 +6,7 @@ function FormGroup(props){
 
 return(
 
-<div className="form-group">
+<div className="form-group" >
     <label htmlFor = {props.htmlfor}>{props.label} </label>
     {props.children}
 
