@@ -7,12 +7,12 @@ const Footer = () => {
 
                 <div className='tituloFooter'>
 
-                    <p style={{margin:'0'}}> &copy; 2022 Escola de Gestão Fazendária</p>
+                    <p style={{margin:'0', fontWeight:'bold'}}> &copy; 2022 Escola de Gestão Fazendária</p>
                 </div>
 
                 <div className='instagram'>
 
-                    <a href="https://www.instagram.com/egefazto"><i className="bi-instagram fs-3" style={{color:'#f0f0f0'}}></i></a>
+                    <a href="https://www.instagram.com/egefazto"><i className="bi-instagram fs-3" style={{color:'#1B1936'}}></i></a>
 
                 </div>
 

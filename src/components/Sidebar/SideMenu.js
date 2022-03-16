@@ -82,9 +82,7 @@ const SideMenu = (props) => {
 
             <div className={`side-menu ${inactive ? 'inactive' : ''}`}>
                 <div className='top-section'>
-                    {/* <div className='logo'>
-                        <img src={logo} alt="Egefaz" />
-                    </div> */}
+                    
                     <div onClick={() => setInactive(!inactive)} className='toggle-menu-btn'>
                         <i className={`bi ${inactive ? 'bi-list' : 'bi-x-circle'}`}></i>
                     </div>
@@ -122,7 +120,7 @@ const SideMenu = (props) => {
 
                     </ul>
                 </div>
-                <div className='side-menu-footer'>
+                {/* <div className='side-menu-footer'>
                     <div className='avatar'>
                         <img src={icon} alt='user' />
                     </div>
@@ -130,7 +128,7 @@ const SideMenu = (props) => {
                         <h5>Rafael Rodrigues</h5>
                         <p>Estagiário</p>
                     </div>
-                </div>
+                </div> */}
 
             </div>
 

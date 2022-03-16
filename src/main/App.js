@@ -51,32 +51,31 @@ function App() {
     <div className="App">
 
       <Router>
+
+        <Header />
         <SideMenu onCollapse={(inactive) => {
           setInactive(inactive)
 
         }} />
-        <div className={`header ${inactive ? 'inactive' : ""}`}>
-          <Header />
 
-        </div>
-        
+
 
 
         <div className={`container ${inactive ? 'inactive' : ""}`}>
           <Switch>
             <Route exact path={'/home'}>   <DashBoard />   </Route>
-            
+
             <Route path={'/cadastrar-folga'}>   <CadastrarFolga />   </Route>
             <Route path={'/consultar-folga'}>   <ConsultarFolga />   </Route>
             <Route path={'/solicitar-folga'}>   <SolicitarFolga />   </Route>
-            
-            <Route path={'/cadastrar-servidor'}>   <CadastrarServidor />   </Route>
+
+            <Route path={'/cadastrar-servidores'}>   <CadastrarServidor />   </Route>            
             <Route path={'/consultar-servidores'}>   <ConsultarServidor />   </Route>
-           
+
             <Route path={'/cadastrar-patrimonio'}>   <CadastrarPatrimonio />   </Route>
             <Route path={'/consultar-patrimonio'}>   <ConsultarPatrimonio />   </Route>
             <Route path={'/movimentar-patrimonio'}>   <MovimentarPatrimonio />   </Route>
-          
+
             <Route path={'/cadastrar-reserva'}>   <CadastrarReserva />   </Route>
             <Route path={'/consultar-reserva'}>   <ConsultarReserva />   </Route>
           </Switch>
