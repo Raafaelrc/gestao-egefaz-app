@@ -246,7 +246,7 @@ class CadastroFolga extends React.Component {
 
 
                                     <label className="la" style={{ marginTop: '20px' }}>Arquivo de comprovação </label>
-                                    <label className="la-1" htmlFor="arquivo" >
+                                    <label className="la-1" htmlFor="arquivo" style={{width:'20%'}}>
                                         <i className="pi pi-upload"
                                             style={{ 'fontSize': '16px', "marginRight": "10px" }}></i>Enviar</label>
 
@@ -270,7 +270,7 @@ class CadastroFolga extends React.Component {
                                     rows={5} cols={30} autoResize />
                             </FormGroup>
 
-                            <button onClick={this.cadastro} type="button" className="btn btn-warning " style={{ marginRight: '20px' }} >Salvar</button>
+                            <button onClick={this.cadastro} type="button" className="btn btn-success " style={{ marginRight: '15px' }} >Salvar</button>
                             <button onClick={this.cancelar} type="button" className="btn btn-danger btnCancelar"  >Cancelar</button>
                         </div>
                     </div>
