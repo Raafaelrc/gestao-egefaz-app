@@ -23,6 +23,7 @@ class CadastroFolga extends React.Component {
         saldo: '',
         servidor: 0
     }
+
     validar() {
         const msg = []
 
@@ -43,10 +44,24 @@ class CadastroFolga extends React.Component {
 
 
     }
-    componentDidMount() {
-        const params = this.props.match
-        // continuar aqui o codigo
+
+    constructor() {
+        super();
+        this.service = new FolgaService()
     }
+
+
+    // componentDidMount() {
+    //     const params = this.props.match
+    //     if (params.id) {
+    //         this.service.obterPorId(params.id)
+    //             .then(response => {
+    //                 this.setState({ ...response.data })
+    //             }).catch(error => {
+    //                 errorMessage(error.response.data)
+    //             })
+    //     }
+    // }
 
     cancelar = () => {
 
@@ -155,7 +170,7 @@ class CadastroFolga extends React.Component {
 
             return data;
         }
-      
+
 
         return (
 
@@ -166,12 +181,12 @@ class CadastroFolga extends React.Component {
 
 
                 <div classname="row">
-                    <div style={{background:'#1B1936', color:'#f0f0f0', marginTop: '10vh', border:' 1px solid #f0f0f0', borderRadius:'5px', padding:'10px', boxShadow:'5px 5px 5px #fdca3f' }} >
+                    <div style={{ background: '#1B1936', color: '#f0f0f0', marginTop: '10vh', border: ' 1px solid #f0f0f0', borderRadius: '5px', padding: '10px', boxShadow: '5px 5px 5px #fdca3f' }} >
                         <h3 >Cadastrar Folga</h3>
                     </div>
 
                     <div className="col-lg-12">
-                        <div classname="bs-component" style={{padding:'10px', marginTop:'20px', borderRadius:'5px', background:'#f0f0f0'}}>
+                        <div classname="bs-component" style={{ padding: '10px', marginTop: '20px', borderRadius: '5px', background: '#f0f0f0' }}>
 
 
                             <FormGroup hatmlFor="inputServidores">
@@ -231,7 +246,7 @@ class CadastroFolga extends React.Component {
 
 
                                     <label className="la" style={{ marginTop: '20px' }}>Arquivo de comprovação </label>
-                                    <label className="la-1" htmlFor="arquivo" style={{width:'20%'}}>
+                                    <label className="la-1" htmlFor="arquivo" style={{ width: '20%' }}>
                                         <i className="pi pi-upload"
                                             style={{ 'fontSize': '16px', "marginRight": "10px" }}></i>Enviar</label>
 
