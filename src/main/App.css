@@ -181,6 +181,8 @@ body {
 
 }
 
+
+
 .side-menu .main-menu {
   margin: 5px 0;
 }
@@ -444,12 +446,14 @@ body {
 
 
 .Footer {
+  
+
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   background: #f0f0f0;
-  height: 80px;
+  height: 70px;
   width: auto;
   color: #1B1936;
   margin-left: 250px;

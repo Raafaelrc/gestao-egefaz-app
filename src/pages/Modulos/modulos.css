@@ -9,6 +9,7 @@
     }
 }
 
+
 .la {
     display: block;
     font-size: 19px;
@@ -38,3 +39,40 @@
 input[type="file"] {
     display: none;
 }
+
+.form-group{
+    margin: 5px 0;
+}
+.btn{
+    margin: 15px 15px 0px 0px ;
+   
+}
+#contentUM{
+    background: #f0f0f0;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+#contentTitulo{
+     background: #1B1936; 
+     color: #f0f0f0; 
+     margin-top: 10vh; 
+     border:  1px solid #f0f0f0; 
+     border-radius: 5px; 
+     padding: 10px; 
+     box-shadow: 5px 5px 5px #fdca3f;
+}
+
+#pagination{
+    display: flex;
+    justify-content: end;
+}
+
+#consultaFolga{
+    display: flex;
+    justify-content: center;
+
+
+}
+

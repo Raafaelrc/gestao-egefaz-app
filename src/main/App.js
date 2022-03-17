@@ -5,6 +5,7 @@ import Footer from '../components/Footer/Footer';
 import DashBoard from '../pages/Modulos/inicio/Dashboard';
 import CadastrarFolga from '../pages/Modulos/folgas/cadastro';
 import CadastrarServidor from '../pages/Modulos/servidores/cadastrarServidor';
+import ConsultarServidor from '../pages/Modulos/servidores/consultaServidor';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from 'react';
@@ -13,16 +14,14 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-const ConsultarFolga = () => {
-  return <h1>Consultar Folga</h1>
-}
+
 const SolicitarFolga = () => {
   return <h1>Solicitar Folga</h1>
 }
 
 
-const ConsultarServidor = () => {
-  return <h1>Consultar Servidor</h1>
+const ConsultarFolga = () =>{
+  return <h1>Consultar Folga</h1>
 }
 
 const CadastrarPatrimonio = () => {

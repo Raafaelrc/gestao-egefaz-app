@@ -8,7 +8,7 @@ import { errorMessage } from "../../../components/toastr";
 
 import { InputMask } from 'primereact/inputmask';
 
-import "./cadastrarServidor.css"
+import "../modulos.css"
 
 
 class CadastrarServidor extends React.Component {
