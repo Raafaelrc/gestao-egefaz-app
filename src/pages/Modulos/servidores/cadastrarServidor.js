@@ -1,5 +1,6 @@
 import React from 'react'
 import FormGroup from "../../../components/form-group";
+import ServidorService from "../../../app/service/servidorService";
 import FolgaService from "../../../app/service/folgaService";
 import { InputTextarea } from "primereact/inputtextarea"
 import AsyncSelect from "react-select/async"
@@ -9,14 +10,156 @@ import { errorMessage } from "../../../components/toastr";
 import { InputMask } from 'primereact/inputmask';
 
 import "../modulos.css"
+import SelectMenu from '../../../components/selectMenu';
 
 
 class CadastrarServidor extends React.Component {
+
+    state = {
+
+        nome: '',
+        cargo: '',
+        lotacao: '',
+        matricula: '',
+        cpf: '',
+        identidade: '',
+        orgao: '',
+        sexo: '',
+        endereco: {
+            cep: '',
+            bairro: '',
+            en: '',
+            uf: ''
+        },
+        civil: '',
+        dataNascimento: '',
+        conjuge: '',
+        senha: '',
+        naturalidade: '',
+        nacionalidade: '',
+        email: '',
+        telefone: ''
+
+    }
+
+    constructor() {
+
+        super();
+        this.service = new ServidorService();
+
+    }
+
+
+
+    cadastrar = () => {
+
+        const servidor = {
+            nome: this.state.nome,
+            cargo: this.state.cargo,
+            lotacao: this.state.lotacao,
+            orgao:this.state.orgao,
+            matricula: this.state.matricula,
+            cpf: this.state.cpf,
+            identidade: this.state.identidade,
+            email: this.state.email,
+            nacionalidade: this.state.nacionalidade,
+            naturalidade: this.state.naturalidade,
+            dataNascimento: this.state.dataNascimento,
+            en: this.state.en,
+            cep: this.state.cep,
+            bairro: this.state.bairro,
+            com: this.state.com,
+            uf: this.state.uf,
+            sexo: this.state.sexo,
+            civil: this.state.civil,
+            telefone: this.state.telefone,
+
+        }
+
+       
+
+        this.service.cadastrar(servidor)
+          .then(response => {
+            succesMessage('Cadastro realizado!')
+            this.setState({
+                nome: '',
+                cargo: '',
+                lotacao: '',
+                matricula: '',
+                cpf:'',
+                identidade:'',
+                orgao:'',
+                sexo:'',
+                endereco:'',
+                civil:'',
+                dataNascimento:'',
+                en:'',
+                cep: '',
+                bairro:'',
+                com:'',
+                uf: '',
+                conjuge:'',
+                senha:'',
+                naturalidade:'',
+                nacionalidade:'',
+                email:'',
+                telefone:''
+            })
+          }).catch(
+            response => { errorMessage('Erro ao relizar o cadastro') }
+          )
+
+    }
+
     render() {
+
+
+        const uf=[
+            {label:"",value:""},
+            {label:"AC",value:"AC"},
+            {label:"AL",value:"AL"},
+            {label:"AP",value:"AP"},
+            {label:"AM",value:"AM"},
+            {label:"BA",value:"BA"},
+            {label:"CE",value:"CE"},
+            {label:"DF",value:"DF"},
+            {label:"ES",value:"ES"},
+            {label:"GO",value:"GO"},
+            {label:"MA",value:"MA"},
+            {label:"MT",value:"MT"},
+            {label:"MS",value:"MS"},
+            {label:"MG",value:"MG"},
+            {label:"PA",value:"PA"},
+            {label:"PB",value:"PB"},
+            {label:"PR",value:"PR"},
+            {label:"PE",value:"PE"},
+            {label:"PI",value:"PI"},
+            {label:"RJ",value:"RJ"},
+            {label:"RN",value:"RN"},
+            {label:"RS",value:"RS"},
+            {label:"RR",value:"RR"},
+            {label:"RO",value:"RO"},
+            {label:"SC",value:"SC"},
+            {label:"SP",value:"SP"},
+            {label:"SE",value:"SE"},
+            {label:"TO",value:"TO"}
+    ]
+
+        const sexo = [
+            { label: "Selecione", value: "" },
+            { label: "Masculino", value: "MASCULINO" },
+            { label: "Feminino", value: "FEMININO" },
+            { label: "Outros", value: "OUTROS" }
+        ]
+        const estadoCivil = [
+            { label: "", value: "" },
+            { label: "Solteiro(a)", value: "Solteiro(a)" },
+            { label: "Casado(a)", value: "Casado(a)" },
+            { label: "Viuvo(a)", value: "Viuvo(a)" },
+            { label: "Separado(a)", value: "Separado(a)" }
+        ]
         return (
             <div className="container-fluid" style={{ marginBottom: '10%' }}>
-
-
 
 
                 <div classname="row">
@@ -30,100 +173,147 @@ class CadastrarServidor extends React.Component {
                                 <div className="row" >
                                     <div className="form-group col-md-6">
                                         <label className='la' for="inputName4">Nome Completo*</label>
-                                        <input type="text" className="form-control" id="inputText" placeholder="Nome completo" />
+                                        <input type="text"
+                                            className="form-control"
+                                            id="inputText"
+                                            placeholder="Nome completo"
+                                            value={this.state.nome}
+                                            onChange={(e) => this.setState({ nome: e.target.value })} />
+
                                     </div>
-                                    <div className="form-group col-md-3">
-                                        <label className='la' for="inputPassword4">Matrícula*</label>
-                                        <input type="text" className="form-control" id="inputText" placeholder="Matrícula" />
-                                    </div>
+
                                     <div className="form-group col-md-3">
                                         <label className='la' for="inputPassword4">CPF*</label>
-                                        <InputMask type="text" className="form-control" mask='999.999.999-99' placeholder="CPF" />
+                                        <InputMask type="text" className="form-control" mask='999.999.999-99' placeholder="CPF"
+                                            value={this.state.cpf}
+                                            onChange={(e) => this.setState({ cpf: e.target.value })} />
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <label className='la' for="inputPassword4">Órgão Exp*</label>
+                                        <input type="text" className="form-control"  placeholder="Orgão do expedidor"
+                                            value={this.state.orgao}
+                                            onChange={(e) => this.setState({ orgao: e.target.value })} />
+                                    </div>
+                                    <div className="form-group col-md-6">
+                                        <label className='la' for="inputPassword4">Matrícula*</label>
+                                        <input type="text" className="form-control" id="inputText" placeholder="Matrícula"
+                                            value={this.state.matricula}
+                                            onChange={(e) => this.setState({ matricula: e.target.value })} />
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label className='la' for="inputPassword4">Cargo*</label>
-                                        <input type="text" className="form-control" id="inputText" placeholder="Cargo" />
+                                        <input type="text" className="form-control" id="inputText" placeholder="Cargo"
+                                            value={this.state.cargo}
+                                            onChange={(e) => this.setState({ cargo: e.target.value })} />
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label className='la' for="inputPassword4">Lotação*</label>
-                                        <input type="text" className="form-control" id="inputText" placeholder="Lotação" />
+                                        <input type="text" className="form-control" id="inputText" placeholder="Lotação"
+                                            value={this.state.lotacao}
+                                            onChange={(e) => this.setState({ lotacao: e.target.value })} />
                                     </div>
                                     <div className="form-group col-md-3">
                                         <label className='la' for="inputPassword4">RG*</label>
-                                        <input type="text" className="form-control" id="inputText" placeholder="Matrícula" />
+                                        <input type="text" className="form-control" id="inputText" placeholder="RG"
+                                            value={this.state.identidade}
+                                            onChange={(e) => this.setState({ identidade: e.target.value })} />
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <label className='la' for="inputEstado">UF*</label>
+                                        <SelectMenu
+                                            className="form-control"
+                                            id="inputUf"
+                                            value={this.state.uf}
+                                            onChange={(e) => this.setState({ uf: e.target.value })}
+                                            lista={uf} />
                                     </div>
                                     <div className="form-group col-md-3">
                                         <label className='la' for="inputPassword4">Data de Nascimento*</label>
-                                        <input type="date" className="form-control" id="inputText" placeholder="Data de Nascimento" />
+                                        <input type="date" className="form-control" id="inputText" placeholder="Data de Nascimento"
+                                            value={this.state.dataNascimento}
+                                            onChange={(e) => this.setState({ dataNascimento: e.target.value })} />
                                     </div>
-                                    <div className="form-group col-md-6">
+                                    <div className="form-group col-md-3">
                                         <label className='la' for="inputPassword4">Estado civíl*</label>
-                                        <select  id="inputEstado" className="form-control">
-                                            <option selected>Selecione </option>
-                                        </select>
+                                        <SelectMenu
+                                            className="form-control"
+                                            id="inputSexo"
+                                            value={this.state.civil}
+                                            onChange={(e) => this.setState({ civil: e.target.value })}
+                                            lista={estadoCivil} />
+
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label className='la' for="inputPassword4">Nacionalidade*</label>
-                                        <input type="text" className="form-control" id="inputText" placeholder="Nacionalidade" />
+                                        <input type="text" className="form-control" id="inputText" placeholder="Nacionalidade"
+                                            value={this.state.nacionalidade}
+                                            onChange={(e) => this.setState({ nacionalidade: e.target.value })} />
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label className='la' for="inputPassword4">Naturalidade*</label>
-                                        <input type="text" className="form-control" id="inputText" placeholder="Naturalidade" />
+                                        <input type="text" className="form-control" id="inputText" placeholder="Naturalidade"
+                                            value={this.state.naturalidade}
+                                            onChange={(e) => this.setState({ naturalidade: e.target.value })} />
                                     </div>
-                                    <div className="form-group col-md-2">
-                                        <label className='la' for="inputPassword4">Sexo*</label>
-                                        <select  id="inputSexo" className="form-control">
-                                            <option selected>Selecione </option>
-                                            <option selected>Masculino </option>
-                                            <option selected>Feminino </option>
-                                            <option selected>Outros </option>
-                                        </select>
+                                    <div className="form-group col-md-3">
+
+                                        <label className='la'>Sexo*</label>
+                                        <SelectMenu
+                                            className="form-control"
+                                            id="inputSexo"
+                                            value={this.state.sexo}
+                                            onChange={(e) => this.setState({ sexo: e.target.value })}
+                                            lista={sexo} />
+
+
+                                    </div>
+                                    <div className="form-group col-md-3">
+                                        <label className='la' for="phone">Telefone*</label>
+                                        <InputMask type="tel" className="form-control" mask="(99)99999-9999" placeholder='Telefone'
+                                            value={this.state.telefone}
+                                            onChange={(e) => this.setState({ telefone: e.target.value })} />
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label className='la' for="inputEmail">E-mail*</label>
-                                        <input type="text" className="form-control" id="inputText" placeholder="E-mail" />
-                                    </div>
-                                    <div className="form-group col-md-4">
-                                        <label className='la' for="phone">Telefone*</label>
-                                        <InputMask  type="tel" className="form-control" mask="(99)99999-9999" placeholder='Telefone' />
+                                        <input type="text" className="form-control" id="inputText" placeholder="E-mail"
+                                            value={this.state.email}
+                                            onChange={(e) => this.setState({ email: e.target.value })} />
                                     </div>
 
 
+
+
+                                    {/* Formulario de endereço */}
+                                    <div className="form-group col-md-6">
+                                        <label className='la' for="inputCEP">CEP*</label>
+                                        <InputMask type="text" className="form-control" mask='99999-999' id="inputCEP" placeholder='CEP'
+                                            value={this.state.cep}
+                                            onChange={(e) => this.setState({ cep: e.target.value })} />
+                                    </div>
 
                                 
-                                        {/* Formulario de endereço */}
-                                    <div className="form-group col-md-2">
-                                        <label className='la' for="inputCEP">CEP*</label>
-                                        <InputMask type="text" className="form-control" mask='99999-999' id="inputCEP" placeholder='CEP' />
-                                    </div>
-
-                                    <div className="form-group col-md-4">
-                                        <label className='la' for="inputEstado">Estado*</label>
-                                        <select id="inputEstado" className="form-control">
-                                            <option selected>UF</option>
-                                            <option>TO</option>
-
-                                        </select>
-                                    </div>
-                                    <div className="form-group col-md-6">
-                                        <label className='la' for="inputCity">Cidade*</label>
-                                        <input type="text" className="form-control" id="inputCity" />
-                                    </div>
-
-
-
                                     <div className="form-group">
                                         <label className='la' for="inputAddress">Endereço*</label>
-                                        <input type="text" className="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0" />
+                                        <input type="text" className="form-control" id="inputAddress" 
+                                            value={this.state.en}
+                                            onChange={(e) => this.setState({ en: e.target.value })} />
                                     </div>
                                     <div className="form-group">
                                         <label className='la' for="inputAddress2">Complemento</label>
-                                        <input type="text" className="form-control" id="inputAddress2" placeholder="Apartamento, hotel, casa, etc." />
+                                        <input type="text" className="form-control" id="inputAddress2" 
+                                            value={this.state.com}
+                                            onChange={(e) => this.setState({ com: e.target.value })} />
+                                    </div>
+                                    <div className="form-group">
+                                        <label className='la' for="inputAddress2">Bairro</label>
+                                        <input type="text" className="form-control" id="inputAddress2" 
+                                            value={this.state.bairro}
+                                            onChange={(e) => this.setState({ bairro: e.target.value })} />
                                     </div>
 
                                 </div>
-                               
-                                <button type="submit" className="btn btn-secondary">Cadastrar</button> 
+
+                                <button onClick={this.cadastrar} type="submit" className="btn btn-secondary">Cadastrar</button>
                                 <button type="submit" className="btn btn-danger">Cancelar</button>
                             </FormGroup>
 
