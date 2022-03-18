@@ -9,7 +9,7 @@ import ConsultarServidor from '../pages/modulos/servidores/consultaServidor';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from 'react';
-
+import 'toastr/build/toastr.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
