@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
-import FormGroup from "../../../components/form-group";
-import ServidorService from "../../../app/service/servidorService";
-import FolgaService from "../../../app/service/folgaService";
-import { InputTextarea } from "primereact/inputtextarea"
-import AsyncSelect from "react-select/async"
+import { withRouter } from 'react-router-dom'
 import { succesMessage } from "../../../components/toastr";
 import { errorMessage } from "../../../components/toastr";
-
 import { InputMask } from 'primereact/inputmask';
 
+import FormGroup from "../../../components/form-group";
+import ServidorService from "../../../app/service/servidorService";
 import "../modulos.css"
 import SelectMenu from '../../../components/selectMenu';
 
@@ -46,6 +43,20 @@ class CadastrarServidor extends React.Component {
 
         super();
         this.service = new ServidorService();
+
+    }
+
+    componentDidMount() {
+        const params = this.props.match.params
+
+        if (params.id) {
+            this.service.servidoresId(params.id)
+                .then(response => {
+                    this.setState({ ...response.data })
+                }).catch(error => {
+                    errorMessage(error.response.data)
+                })
+        }
 
     }
 
@@ -392,4 +403,4 @@ class CadastrarServidor extends React.Component {
     }
 }
 
-export default CadastrarServidor
+export default withRouter( CadastrarServidor)
