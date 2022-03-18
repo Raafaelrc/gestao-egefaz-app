@@ -21,8 +21,8 @@ export default function ConsultarServidor() {
                 window.location.href = '/cadastrar-folga';
             }
         },
-   
-             
+
+
         {
             label: 'Visualizar',
             icon: 'pi pi-eye',
@@ -62,7 +62,7 @@ export default function ConsultarServidor() {
                     <div classname="bs-component " id='contentUM'>
                         <div className='row'>
                             <table class="table">
-                                <thead class="thead-dark form-group">
+                                <thead class="thead-dark form-group col-md-3">
                                     <tr>
                                         <th scope="col">Matrícula</th>
                                         <th scope="col">Nome</th>
@@ -70,23 +70,26 @@ export default function ConsultarServidor() {
 
                                     </tr>
                                 </thead>
-                                <tbody className='form-group'>
+                                <tbody className='form-group col-md-3"'>
                                     <tr>
-                                        <th scope="row">Matrícula 1</th>
-                                        <td>Nome 1</td>
-                                        <td>Cargo 1</td>
+                                        <th  scope="row">Matrícula 1</th>
+                                        <td >Nome 1</td>
+                                        <td >Cargo 1</td>
+                                        <td >
+                                            
+                                            <div className="speeddial-delay-demo " style={{ display: 'flex', justifyContent: 'end' }}>
+                                                <SpeedDial model={items} direction="left" transitionDelay={80} showIcon="pi pi-bars " hideIcon="pi pi-times" buttonClassName="p-button-outlined" />
+                                            </div>
+                                        </td>
 
 
                                     </tr>
 
+
                                 </tbody>
+
                             </table>
-                            <div>
-                                <Toast ref={toast} />
-                                <div className="speeddial-delay-demo" style={{ position: 'relative',display:'flex', justifyContent:'end', height:'75px' }}>
-                                    <SpeedDial  model={items} direction="left" transitionDelay={80} showIcon="pi pi-bars " hideIcon="pi pi-times" buttonClassName="p-button-outlined" />
-                                </div>
-                            </div>
+
 
 
                         </div>
@@ -99,10 +102,10 @@ export default function ConsultarServidor() {
                     </div>
                 </div>
             </div>
-            
-          <Footer/>
 
-        
+       
+
+
         </div>
 
 
