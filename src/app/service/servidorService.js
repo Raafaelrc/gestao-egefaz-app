@@ -21,8 +21,8 @@ class ServidorService extends ApiService {
      consultar(servidorFiltro){
         let params = `?nome=${servidorFiltro.nome}`
 
-        if(servidorFiltro.cargo){
-            params= `${params}&cargo=${servidorFiltro.cargo}`
+        if(servidorFiltro.matricula){
+            params= `${params}&matricula=${servidorFiltro.matricula}`
         }
 
         return this.get(params);

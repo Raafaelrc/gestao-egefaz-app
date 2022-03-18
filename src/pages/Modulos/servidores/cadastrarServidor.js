@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import FormGroup from "../../../components/form-group";
 import ServidorService from "../../../app/service/servidorService";
 import FolgaService from "../../../app/service/folgaService";
@@ -49,15 +49,66 @@ class CadastrarServidor extends React.Component {
 
     }
 
+    validar = () => {
+
+        const msg = []
+
+        
+        if (!this.state.nome) {
+
+            msg.push('O nome deve ser informado')
+        }
+        
+        if (!this.state.cpf) {
+
+            msg.push('O cpf deve ser informado')
+
+        }
+        
+        if (!this.state.matricula) {
+
+            msg.push('A matricula deve ser informada')
+
+        }
+        
+        if (!this.state.sexo) {
+
+            msg.push('O sexo deve ser informado')
+
+        }
+        
+        if (!this.state.naturalidade) {
+
+            msg.push('O cpf deve ser informado')
+
+        }
+    
+
+        return msg;
+    }
+
+    
+    
+    
 
 
     cadastrar = () => {
+
+        const msgs = this.validar();
+        if (msgs && msgs.length > 0) {
+            msgs.forEach((msgs, index) => {
+                errorMessage(msgs)
+
+            });
+            return false
+
+        }
 
         const servidor = {
             nome: this.state.nome,
             cargo: this.state.cargo,
             lotacao: this.state.lotacao,
-            orgao:this.state.orgao,
+            orgao: this.state.orgao,
             matricula: this.state.matricula,
             cpf: this.state.cpf,
             identidade: this.state.identidade,
@@ -75,75 +126,75 @@ class CadastrarServidor extends React.Component {
             telefone: this.state.telefone,
 
         }
+        
 
-       
-
+        
         this.service.cadastrar(servidor)
-          .then(response => {
-            succesMessage('Cadastro realizado!')
-            this.setState({
-                nome: '',
-                cargo: '',
-                lotacao: '',
-                matricula: '',
-                cpf:'',
-                identidade:'',
-                orgao:'',
-                sexo:'',
-                endereco:'',
-                civil:'',
-                dataNascimento:'',
-                en:'',
-                cep: '',
-                bairro:'',
-                com:'',
-                uf: '',
-                conjuge:'',
-                senha:'',
-                naturalidade:'',
-                nacionalidade:'',
-                email:'',
-                telefone:''
-            })
-          }).catch(
-            response => { errorMessage('Erro ao relizar o cadastro') }
-          )
-
+            .then(response => {
+                succesMessage('Cadastro realizado!')
+                this.setState({
+                    nome: '',
+                    cargo: '',
+                    lotacao: '',
+                    matricula: '',
+                    cpf: '',
+                    identidade: '',
+                    orgao: '',
+                    sexo: '',
+                    endereco: '',
+                    civil: '',
+                    dataNascimento: '',
+                    en: '',
+                    cep: '',
+                    bairro: '',
+                    com: '',
+                    uf: '',
+                    conjuge: '',
+                    senha: '',
+                    naturalidade: '',
+                    nacionalidade: '',
+                    email: '',
+                    telefone: ''
+                })
+            }).catch(
+                response => { errorMessage('Erro ao relizar o cadastro') }
+                )
+                
     }
-
+    
     render() {
-
-
-        const uf=[
-            {label:"",value:""},
-            {label:"AC",value:"AC"},
-            {label:"AL",value:"AL"},
-            {label:"AP",value:"AP"},
-            {label:"AM",value:"AM"},
-            {label:"BA",value:"BA"},
-            {label:"CE",value:"CE"},
-            {label:"DF",value:"DF"},
-            {label:"ES",value:"ES"},
-            {label:"GO",value:"GO"},
-            {label:"MA",value:"MA"},
-            {label:"MT",value:"MT"},
-            {label:"MS",value:"MS"},
-            {label:"MG",value:"MG"},
-            {label:"PA",value:"PA"},
-            {label:"PB",value:"PB"},
-            {label:"PR",value:"PR"},
-            {label:"PE",value:"PE"},
-            {label:"PI",value:"PI"},
-            {label:"RJ",value:"RJ"},
-            {label:"RN",value:"RN"},
-            {label:"RS",value:"RS"},
-            {label:"RR",value:"RR"},
-            {label:"RO",value:"RO"},
-            {label:"SC",value:"SC"},
-            {label:"SP",value:"SP"},
-            {label:"SE",value:"SE"},
-            {label:"TO",value:"TO"}
-    ]
+        
+       
+        const uf = [
+            { label: "", value: "" },
+            { label: "AC", value: "AC" },
+            { label: "AL", value: "AL" },
+            { label: "AP", value: "AP" },
+            { label: "AM", value: "AM" },
+            { label: "BA", value: "BA" },
+            { label: "CE", value: "CE" },
+            { label: "DF", value: "DF" },
+            { label: "ES", value: "ES" },
+            { label: "GO", value: "GO" },
+            { label: "MA", value: "MA" },
+            { label: "MT", value: "MT" },
+            { label: "MS", value: "MS" },
+            { label: "MG", value: "MG" },
+            { label: "PA", value: "PA" },
+            { label: "PB", value: "PB" },
+            { label: "PR", value: "PR" },
+            { label: "PE", value: "PE" },
+            { label: "PI", value: "PI" },
+            { label: "RJ", value: "RJ" },
+            { label: "RN", value: "RN" },
+            { label: "RS", value: "RS" },
+            { label: "RR", value: "RR" },
+            { label: "RO", value: "RO" },
+            { label: "SC", value: "SC" },
+            { label: "SP", value: "SP" },
+            { label: "SE", value: "SE" },
+            { label: "TO", value: "TO" }
+        ]
 
         const sexo = [
             { label: "Selecione", value: "" },
@@ -178,7 +229,7 @@ class CadastrarServidor extends React.Component {
                                             id="inputText"
                                             placeholder="Nome completo"
                                             value={this.state.nome}
-                                            onChange={(e) => this.setState({ nome: e.target.value })} />
+                                            onChange={(e) => this.setState({ nome: e.target.value })}/>
 
                                     </div>
 
@@ -190,15 +241,17 @@ class CadastrarServidor extends React.Component {
                                     </div>
                                     <div className="form-group col-md-3">
                                         <label className='la' for="inputPassword4">Órgão Exp*</label>
-                                        <input type="text" className="form-control"  placeholder="Orgão do expedidor"
+                                        <input type="text" className="form-control" placeholder="Orgão do expedidor"
                                             value={this.state.orgao}
                                             onChange={(e) => this.setState({ orgao: e.target.value })} />
                                     </div>
                                     <div className="form-group col-md-6">
-                                        <label className='la' for="inputPassword4">Matrícula*</label>
-                                        <input type="text" className="form-control" id="inputText" placeholder="Matrícula"
+                                        <label className='la' htmlFor="validationDefault01">Matrícula*</label>
+                                        <input type="text" className="form-control" id="validationDefault01" placeholder="Matrícula"
                                             value={this.state.matricula}
-                                            onChange={(e) => this.setState({ matricula: e.target.value })} />
+                                            onChange={(e) => this.setState({ matricula: e.target.value })}  aria-describedby="inputGroupPrepend2"  required />
+
+                                 
                                     </div>
                                     <div className="form-group col-md-6">
                                         <label className='la' for="inputPassword4">Cargo*</label>
@@ -244,6 +297,12 @@ class CadastrarServidor extends React.Component {
 
                                     </div>
                                     <div className="form-group col-md-6">
+                                        <label className='la' for="inputPassword4">Cônjuge*</label>
+                                        <input type="text" className="form-control" id="inputText" placeholder="Cônjuge"
+                                            value={this.state.conjuge}
+                                            onChange={(e) => this.setState({ conjuge: e.target.value })} />
+                                    </div>
+                                    <div className="form-group col-md-6">
                                         <label className='la' for="inputPassword4">Nacionalidade*</label>
                                         <input type="text" className="form-control" id="inputText" placeholder="Nacionalidade"
                                             value={this.state.nacionalidade}
@@ -255,7 +314,7 @@ class CadastrarServidor extends React.Component {
                                             value={this.state.naturalidade}
                                             onChange={(e) => this.setState({ naturalidade: e.target.value })} />
                                     </div>
-                                    <div className="form-group col-md-3">
+                                    <div className="form-group col-md-6">
 
                                         <label className='la'>Sexo*</label>
                                         <SelectMenu
@@ -267,7 +326,7 @@ class CadastrarServidor extends React.Component {
 
 
                                     </div>
-                                    <div className="form-group col-md-3">
+                                    <div className="form-group col-md-6">
                                         <label className='la' for="phone">Telefone*</label>
                                         <InputMask type="tel" className="form-control" mask="(99)99999-9999" placeholder='Telefone'
                                             value={this.state.telefone}
@@ -291,22 +350,22 @@ class CadastrarServidor extends React.Component {
                                             onChange={(e) => this.setState({ cep: e.target.value })} />
                                     </div>
 
-                                
+
                                     <div className="form-group">
                                         <label className='la' for="inputAddress">Endereço*</label>
-                                        <input type="text" className="form-control" id="inputAddress" 
+                                        <input type="text" className="form-control" id="inputAddress"
                                             value={this.state.en}
                                             onChange={(e) => this.setState({ en: e.target.value })} />
                                     </div>
                                     <div className="form-group">
                                         <label className='la' for="inputAddress2">Complemento</label>
-                                        <input type="text" className="form-control" id="inputAddress2" 
+                                        <input type="text" className="form-control" id="inputAddress2"
                                             value={this.state.com}
                                             onChange={(e) => this.setState({ com: e.target.value })} />
                                     </div>
                                     <div className="form-group">
                                         <label className='la' for="inputAddress2">Bairro</label>
-                                        <input type="text" className="form-control" id="inputAddress2" 
+                                        <input type="text" className="form-control" id="inputAddress2"
                                             value={this.state.bairro}
                                             onChange={(e) => this.setState({ bairro: e.target.value })} />
                                     </div>
