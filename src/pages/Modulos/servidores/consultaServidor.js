@@ -4,11 +4,12 @@ import { errorMessage, succesMessage } from '../../../components/toastr';
 import { withRouter } from 'react-router-dom'
 import DataTableSerrvidor from './dataTableSerrvidor';
 import FormGroup from '../../../components/form-group';
+import Header from '../../../components/header/Header';
 
 import "../modulos.css"
 
 
- class ConsultarServidor extends React.Component {
+class ConsultarServidor extends React.Component {
 
 
     state = {
@@ -65,69 +66,70 @@ import "../modulos.css"
 
 
         return (
+            <>
+                <Header/>
+                <div className="container-fluid" style={{ marginBottom: '10%' }}>
+                    <div classname="row">
+                        <div id="contentTitulo" >
+                            <h3 >Consultar Servidor</h3>
+                        </div>
 
-            <div className="container-fluid" style={{ marginBottom: '10%' }}>
-                <div classname="row">
-                    <div id="contentTitulo" >
-                        <h3 >Consultar Servidor</h3>
+                        <div className="col-lg-12">
+                            <div classname="bs-component" id="contentUM">
+
+
+                                <FormGroup htmlFor="inputNome"
+                                    label="Nome:">
+                                    <input type="text"
+                                        class="form-control"
+                                        id="inputNome"
+                                        value={this.state.nome}
+                                        onChange={e => this.setState({ nome: e.target.value })}
+                                        placeholder="Buscar por nome" />
+
+                                </FormGroup >
+
+                                <FormGroup htmlFor="inputCargo"
+                                    label="Mátricula:">
+                                    <input type="text"
+                                        class="form-control"
+                                        id="inputCargo"
+                                        value={this.state.matricula}
+                                        onChange={e => this.setState({ cargo: e.target.matricula })}
+                                        placeholder="Buscar por mátricula" />
+                                </FormGroup >
+
+                                <button onClick={this.buscar} ttype="button" className="btn btn-success" >Buscar</button>
+
+                            </div>
+                        </div>
                     </div>
+
+
 
                     <div className="col-lg-12">
                         <div classname="bs-component" id="contentUM">
 
 
-                            <FormGroup htmlFor="inputNome"
-                                label="Nome:">
-                                <input type="text"
-                                    class="form-control"
-                                    id="inputNome"
-                                    value={this.state.nome}
-                                    onChange={e => this.setState({ nome: e.target.value })}
-                                    placeholder="Buscar por nome" />
+                            <div classname="row">
+                                <div className="col-lg-20">
 
-                            </FormGroup >
+                                    <DataTableSerrvidor
+                                        servidores={this.state.servidores}
+                                        editAction={this.editar}
+                                        deleteAction={this.deletar} />
 
-                            <FormGroup htmlFor="inputCargo"
-                                label="Mátricula:">
-                                <input type="text"
-                                    class="form-control"
-                                    id="inputCargo"
-                                    value={this.state.matricula}
-                                    onChange={e => this.setState({ cargo: e.target.matricula })}
-                                    placeholder="Buscar por mátricula" />
-                            </FormGroup >
-
-                            <button onClick={this.buscar} ttype="button" className="btn btn-success" >Buscar</button>
-
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div className="col-lg-12">
-                    <div classname="bs-component" id="contentUM">
-
-
-                        <div classname="row">
-                            <div className="col-lg-20">
-
-                                <DataTableSerrvidor
-                                    servidores={this.state.servidores}
-                                    editAction={this.editar}
-                                    deleteAction={this.deletar} />
-
+                                </div>
                             </div>
+
+
+                            <a className="btn btn-danger" href="#/home" role="button">Voltar</a>
+
                         </div>
 
-
-                        <a className="btn btn-danger" href="#/home" role="button">Voltar</a>
-
                     </div>
-
                 </div>
-            </div>
-
+            </>
         )
     }
 

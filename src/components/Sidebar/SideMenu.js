@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import logo from '../../assets/logo/ideia.svg'
 import icon from '../../assets/aluna.png'
 import MenuItem from './MenuItem';
+import Footer from '../Footer/Footer'
 
 
 
@@ -82,7 +83,7 @@ const SideMenu = (props) => {
 
             <div className={`side-menu ${inactive ? 'inactive' : ''}`}>
                 <div className='top-section'>
-                    
+
                     <div onClick={() => setInactive(!inactive)} className='toggle-menu-btn'>
                         <i className={`bi ${inactive ? 'bi-list' : 'bi-x-circle'}`}></i>
                     </div>
@@ -93,7 +94,7 @@ const SideMenu = (props) => {
 
                 <div className='main-menu'>
                     <ul >
-                        <a href='/home'className='menu-item'>
+                        <a href='/home' className='menu-item'>
                             <div className='menu-icon'>
                                 <i className="bi bi-speedometer2"></i>
                             </div>
@@ -120,15 +121,10 @@ const SideMenu = (props) => {
 
                     </ul>
                 </div>
-                {/* <div className='side-menu-footer'>
-                    <div className='avatar'>
-                        <img src={icon} alt='user' />
-                    </div>
-                    <div className='user-info'>
-                        <h5>Rafael Rodrigues</h5>
-                        <p>Estagiário</p>
-                    </div>
-                </div> */}
+                <div className={`footer ${inactive ? "inactive" : ""}`}>
+                    <Footer/>
+
+                </div>
 
             </div>
 

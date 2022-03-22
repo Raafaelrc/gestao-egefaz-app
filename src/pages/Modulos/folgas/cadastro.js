@@ -11,6 +11,7 @@ import { errorMessage } from "../../../components/toastr";
 
 import '../modulos.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "../../../components/header/Header";
 
 
 
@@ -174,6 +175,8 @@ class CadastroFolga extends React.Component {
 
         return (
             <>
+                <Header/>
+                 
                 <div className="container-fluid" style={{ marginBottom: '10%' }}>
 
 
