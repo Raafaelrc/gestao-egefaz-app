@@ -8,20 +8,21 @@ export default props=>{
         return (
             <tr>
                 <td>{servidor.nome}</td>
+                <td>{servidor.cargo}</td>
                 <td>{servidor.cpf}</td>
-                <td>{servidor.lotacao}</td>
+
                 <td>{servidor.matricula}</td>
                 <td>
                     <button type="button" 
                     className="btn btn-primary"
-                    onClick={e=> props.editAction(servidor)}>
+                    onClick={e=> props.editAction(servidor.id)}>
                     Editar</button>
 
 
                     <button type="button" 
                     className="btn btn-primary"
                     onClick={e=>props.deleteAction(servidor)}>
-                        Excluir</button>
+                        Desativar</button>
                 </td>
 
             </tr>
@@ -38,9 +39,9 @@ export default props=>{
                 <tr>
 
                     <th scope="col">Nome</th>
-                    <th scope="col">CPF</th>
-                    <th scope="col">Lotação</th>
+                    <th scope="col">Cargo</th>
                     <th scope="col">Matricula</th>
+                    <th scope="col">CPF</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>

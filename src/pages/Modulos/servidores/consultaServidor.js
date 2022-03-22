@@ -1,15 +1,14 @@
 import React from 'react'
 import ServidorService from '../../../app/service/servidorService';
 import { errorMessage, succesMessage } from '../../../components/toastr';
-import Cards from '../../../components/cards'
+import { withRouter } from 'react-router-dom'
 import DataTableSerrvidor from './dataTableSerrvidor';
 import FormGroup from '../../../components/form-group';
 
 import "../modulos.css"
 
 
-
-export default class ConsultarServidor extends React.Component {
+ class ConsultarServidor extends React.Component {
 
 
     state = {
@@ -59,7 +58,7 @@ export default class ConsultarServidor extends React.Component {
 
     editar = (id) => {
 
-
+        this.props.history.push(`/cadastrar-servidores/${id}`)
     }
 
     render() {
@@ -133,12 +132,7 @@ export default class ConsultarServidor extends React.Component {
     }
 
 
-
-
-
-
-
-
 }
 
+export default withRouter(ConsultarServidor)
 

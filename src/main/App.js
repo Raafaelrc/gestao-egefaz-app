@@ -64,7 +64,9 @@ function App() {
             <Route path={'/consultar-folga'}>   <ConsultarFolga />   </Route>
             <Route path={'/solicitar-folga'}>   <SolicitarFolga />   </Route>
 
-            <Route path={'/cadastrar-servidores'}>   <CadastrarServidor />   </Route>            
+            {/* <Route path={'/cadastrar-servidores/:id?'}>   <CadastrarServidor />   </Route>          */}
+
+            <Route path="/cadastrar-servidores/:id?"  component={CadastrarServidor}></Route>
             <Route path={'/consultar-servidores'}>   <ConsultarServidor />   </Route>
 
             <Route path={'/cadastrar-patrimonio'}>   <CadastrarPatrimonio />   </Route>
