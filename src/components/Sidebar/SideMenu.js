@@ -92,7 +92,7 @@ const SideMenu = (props) => {
 
                 <div className='main-menu'>
                     <ul >
-                        <a href='/home' className='menu-item'>
+                        <a href='/' className='menu-item'>
                             <div className='menu-icon'>
                                 <i className="bi bi-speedometer2"></i>
                             </div>
