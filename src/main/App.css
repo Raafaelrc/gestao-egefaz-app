@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Gothic+A1&family=Roboto+Mono:wght@100&display=swap');
+
+
+
 * {
   margin: 0;
   padding: 0;
-
+  
+  
 }
 
 html {
@@ -22,7 +27,8 @@ li {
 
 body {
   background-color: #FFF;
-  font-family: sans-serif;
+  
+  font-family: 'Gothic A1', sans-serif;
 }
 
 /* Estilizando header */
@@ -40,7 +46,7 @@ body {
   transition: margin-left .2s ease-in;
   /* box-shadow: 5px 5px 10px #888888; */
   z-index: 1000;
-
+  font-family: 'Bree Serif', serif;
 }
 
 /* .header.inactive {
@@ -57,7 +63,10 @@ body {
 }
 
 .titulo-header {
-  margin-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
 }
 
 

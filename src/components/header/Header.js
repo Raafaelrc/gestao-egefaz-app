@@ -1,5 +1,5 @@
 import React from 'react';
-
+import LogoSge from '../../assets/logo/logo-sge.svg'
 
 
 
@@ -16,7 +16,8 @@ export default function Header() {
 
             <div className='header-modulo'>
                 <div className='titulo-header'>
-                    <h2>Gestão de Módulos</h2>
+                    <img src={LogoSge} style={{width:'60px', height:'60px', marginRight:'20px'}}/>
+                    <h2 style={{marginTop:'10px'}}>Gestão de Módulos</h2>
 
                 </div>
 

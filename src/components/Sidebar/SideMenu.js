@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import logo from '../../assets/logo/ideia.svg'
-import icon from '../../assets/aluna.png'
 import MenuItem from './MenuItem';
 import Footer from '../Footer/Footer'
 

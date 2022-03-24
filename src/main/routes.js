@@ -40,7 +40,7 @@ const ConsultarReserva = () => {
 }
 
 function Rotas() {
-    const [inactive, setInactive] = useState(false)
+    const [inactive, setInactive] = useState(true )
     return (
         <>
 
