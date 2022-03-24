@@ -1,11 +1,11 @@
 import React from "react";
 
 import { Route, BrowserRouter, Switch, Redirect } from 'react-router-dom'
-import DashBoard from "../pages/modulos/inicio/Dashboard";
+import DashBoard from "../pages/Modulos/inicio/Dashboard";
 import SideMenu from '../components/Sidebar/SideMenu';
-import CadastrarFolga from '../pages/modulos/folgas/cadastro';
-import CadastrarServidor from '../pages/modulos/servidores/cadastrarServidor';
-import ConsultarServidor from '../pages/modulos/servidores/consultaServidor';
+import CadastrarFolga from '../pages/Modulos/folgas/cadastro';
+import CadastrarServidor from '../pages/Modulos/servidores/cadastrarServidor';
+import ConsultarServidor from '../pages/Modulos/servidores/consultaServidor';
 import { useState } from 'react';
 import 'toastr/build/toastr.css'
 
