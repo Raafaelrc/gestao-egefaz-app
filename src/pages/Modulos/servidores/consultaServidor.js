@@ -2,7 +2,7 @@ import React from 'react'
 import ServidorService from '../../../app/service/servidorService';
 import { errorMessage, succesMessage } from '../../../components/toastr';
 import { withRouter } from 'react-router-dom'
-import DataTableSerrvidor from './dataTableSerrvidor';
+import DataTableServidor from './dataTableServidor';
 import FormGroup from '../../../components/form-group';
 
 import "../modulos.css"
@@ -13,7 +13,7 @@ import "../modulos.css"
 
     state = {
         nome: '',
-        cargo: '',
+        matricula: '',
         servidores: []
     }
 
@@ -27,7 +27,7 @@ import "../modulos.css"
 
         const servidorFiltro = {
             nome: this.state.nome,
-            cargo: this.state.cargo
+            matricula: this.state.matricula
         }
 
         this.service
@@ -93,7 +93,7 @@ import "../modulos.css"
                                     class="form-control"
                                     id="inputCargo"
                                     value={this.state.matricula}
-                                    onChange={e => this.setState({ cargo: e.target.matricula })}
+                                    onChange={e => this.setState({ matricula: e.target.value })}
                                     placeholder="Buscar por mátricula" />
                             </FormGroup >
 
@@ -112,7 +112,7 @@ import "../modulos.css"
                         <div classname="row">
                             <div className="col-lg-20">
 
-                                <DataTableSerrvidor
+                                <DataTableServidor
                                     servidores={this.state.servidores}
                                     editAction={this.editar}
                                     deleteAction={this.deletar} />

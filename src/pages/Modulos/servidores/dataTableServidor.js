@@ -21,7 +21,7 @@ export default props=>{
 
                     <button type="button" 
                     className="btn btn-primary"
-                    onClick={e=>props.deleteAction(servidor)}>
+                    onClick={e=>props.disableAction(servidor)}>
                         Desativar</button>
                 </td>
 

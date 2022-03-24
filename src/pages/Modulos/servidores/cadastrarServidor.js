@@ -257,7 +257,7 @@ class CadastrarServidor extends React.Component {
                                             onChange={(e) => this.setState({ orgao: e.target.value })} />
                                     </div>
                                     <div className="form-group col-md-6">
-                                        <label className='la' htmlFor="validationDefault01">Matrícula*</label>
+                                        <label className='la' htmlFor="validationDefault01">Matrícula</label>
                                         <input type="text" className="form-control" id="validationDefault01" placeholder="Matrícula"
                                             value={this.state.matricula}
                                             onChange={(e) => this.setState({ matricula: e.target.value })}  aria-describedby="inputGroupPrepend2"  required />
@@ -308,7 +308,7 @@ class CadastrarServidor extends React.Component {
 
                                     </div>
                                     <div className="form-group col-md-6">
-                                        <label className='la' for="inputPassword4">Cônjuge*</label>
+                                        <label className='la' for="inputPassword4">Cônjuge</label>
                                         <input type="text" className="form-control" id="inputText" placeholder="Cônjuge"
                                             value={this.state.conjuge}
                                             onChange={(e) => this.setState({ conjuge: e.target.value })} />
