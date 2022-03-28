@@ -225,6 +225,8 @@ body {
 
 .side-menu .main-menu .sub-menu {
   color: #f0f0f0;
+  background:#100f2250;
+  border-radius: 10px;
   margin-left: 20px;
   border-left: 1px solid #f0f0f070;
   box-sizing: border-box;
@@ -260,62 +262,13 @@ body {
 }
 
 .side-menu .main-menu .sub-menu a.active {
-  background: #1B1936;
+
   display: block;
 
   border-radius: 5px;
   color: #FFFFFF;
 }
 
-/* .side-menu-footer {
-  width: 100%;
-  height: 163px;
-  background: #1B1936;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.side-menu-footer .avatar {
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.side-menu-footer .avatar img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.side-menu-footer .user-info {
-  display: inline-block;
-  margin: 0 10px;
-  color: #f0f0f0;
-  position: absolute;
-  opacity: 1;
-  transition: opacity .2s ease-in;
-} */
-
-/* .side-menu.inactive .side-menu-footer .user-info {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-}
-
-
-.side-menu-footer .user-info h5 {
-  font-size: 15px;
-}
-
-.side-menu-footer .user-info p {
-  font-size: 14px;
-} */
 
 .divider {
   width: 100%;

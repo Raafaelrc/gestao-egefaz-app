@@ -59,7 +59,9 @@ const MenuItems = [
 
 ];
 
+
 const SideMenu = (props) => {
+   
 
     const [inactive, setInactive] = useState(true);
 
@@ -110,7 +112,9 @@ const SideMenu = (props) => {
                                 onClick={() => {
                                     if (inactive) {
                                         setInactive(false);
+                                    
                                     }
+                                   
                                 }}
                             />)
                         }

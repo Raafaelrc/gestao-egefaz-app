@@ -48,10 +48,30 @@ input[type="file"] {
    
 }
 #contentUM{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
     background: #f0f0f0;
     padding: 10px;
     margin-top: 20px;
     border-radius: 5px;
+}
+
+@media (max-width:700px){
+    #contentUM{
+        width: 100%;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+        
+    }
+}
+.buttoncard{
+    width: 100%;
+    
 }
 
 #contentTitulo{
