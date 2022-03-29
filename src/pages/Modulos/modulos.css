@@ -47,7 +47,7 @@ input[type="file"] {
     margin: 15px 15px 0px 0px ;
    
 }
-#contentUM{
+.contentDOIS{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,10 +58,11 @@ input[type="file"] {
     border-radius: 5px;
 }
 
-@media (max-width:700px){
-    #contentUM{
+@media (max-width:800px){
+    .contentDOIS{
         width: 100%;
-        display: block;
+        flex: 2;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -71,7 +72,6 @@ input[type="file"] {
 }
 .buttoncard{
     width: 100%;
-    
 }
 
 #contentTitulo{
@@ -86,7 +86,7 @@ input[type="file"] {
 
 #pagination{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 #consultaFolga{

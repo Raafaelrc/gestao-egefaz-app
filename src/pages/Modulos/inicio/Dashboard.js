@@ -25,7 +25,7 @@ const DashBoard = () => {
     return (
         <>
 
-            <Header />
+
             <div className="container-fluid" style={{ marginBottom: '10%' }}>
                 <div classname="row">
                     <div id="contentTitulo" >
@@ -33,8 +33,9 @@ const DashBoard = () => {
                     </div>
                     <div className="col-lg-12">
                         <div classname="bs-component" id="contentUM" >
-                            
-                                <Card className="buttoncard" style={{margin:'5px'}} sx={{ maxWidth: 345 }}>
+                            <div className="contentDOIS">
+
+                                <Card className="buttoncard" style={{ margin: '5px' }} sx={{ maxWidth: 345 }}>
                                     <CardMedia
                                         component="img"
                                         alt="Folga"
@@ -45,15 +46,15 @@ const DashBoard = () => {
                                         <Typography gutterBottom variant="h5" component="div">
                                             Folga
                                         </Typography>
-                                        
+
                                     </CardContent>
                                     <CardActions>
-                                        <Button style={{fontSize:'0.6rem'}}>Cadastrar</Button>
-                                        <Button style={{fontSize:'0.6rem'}}>Consultar</Button>
-                                        <Button style={{fontSize:'0.6rem'}}>Solcitar</Button>
+                                        <Button style={{ fontSize: '0.6rem' }}>Cadastrar</Button>
+                                        <Button style={{ fontSize: '0.6rem' }}>Consultar</Button>
+                                        <Button style={{ fontSize: '0.6rem' }}>Solcitar</Button>
                                     </CardActions>
                                 </Card>
-                                <Card className="buttoncard" style={{margin:'5px'}} sx={{ maxWidth: 345 }}>
+                                <Card className="buttoncard" style={{ margin: '5px' }} sx={{ maxWidth: 345 }}>
                                     <CardMedia
                                         component="img"
                                         alt="Servidor"
@@ -64,15 +65,15 @@ const DashBoard = () => {
                                         <Typography gutterBottom variant="h5" component="div">
                                             Servidor
                                         </Typography>
-                                        
+
                                     </CardContent>
                                     <CardActions>
-                                        <Button style={{fontSize:'0.6rem'}}>Cadastrar</Button>
-                                        <Button style={{fontSize:'0.6rem'}}>Consultar</Button>
-                                        
+                                        <Button style={{ fontSize: '0.6rem' }}>Cadastrar</Button>
+                                        <Button style={{ fontSize: '0.6rem' }}>Consultar</Button>
+
                                     </CardActions>
                                 </Card>
-                                <Card className="buttoncard" style={{margin:'5px'}} sx={{ maxWidth: 345 }}>
+                                <Card className="buttoncard" style={{ margin: '5px' }} sx={{ maxWidth: 345 }}>
                                     <CardMedia
                                         component="img"
                                         alt="Patrimônio"
@@ -83,15 +84,15 @@ const DashBoard = () => {
                                         <Typography gutterBottom variant="h5" component="div">
                                             Patrimônio
                                         </Typography>
-                                       
+
                                     </CardContent>
                                     <CardActions>
-                                        <Button style={{fontSize:'0.6rem'}}>Cadastrar</Button>
-                                        <Button style={{fontSize:'0.6rem'}}>Consultar</Button>
-                                        <Button style={{fontSize:'0.6rem'}}>Movimentar</Button>
+                                        <Button style={{ fontSize: '0.6rem' }}>Cadastrar</Button>
+                                        <Button style={{ fontSize: '0.6rem' }}>Consultar</Button>
+                                        <Button style={{ fontSize: '0.6rem' }}>Movimentar</Button>
                                     </CardActions>
                                 </Card>
-                                <Card className="buttoncard" style={{margin:'5px'}} sx={{ maxWidth: 345 }}>
+                                <Card className="buttoncard" style={{ margin: '5px' }} sx={{ maxWidth: 345 }}>
                                     <CardMedia
                                         component="img"
                                         alt="Hotelaria"
@@ -102,18 +103,19 @@ const DashBoard = () => {
                                         <Typography gutterBottom variant="h5" component="div">
                                             Hotelaria
                                         </Typography>
-                                        
+
                                     </CardContent>
                                     <CardActions>
-                                        <Button style={{fontSize:'0.6rem'}}>Cadastrar</Button>
-                                        <Button style={{fontSize:'0.6rem'}}>Consultar</Button>
-                                        
+                                        <Button style={{ fontSize: '0.6rem' }}>Cadastrar</Button>
+                                        <Button style={{ fontSize: '0.6rem' }}>Consultar</Button>
+
                                     </CardActions>
                                 </Card>
+                            </div>
 
-                         
 
-                           
+
+
 
 
 

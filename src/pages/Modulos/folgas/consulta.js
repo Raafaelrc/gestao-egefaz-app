@@ -112,7 +112,7 @@ class ConsultaFolga extends React.Component {
         return (
             <>
 
-                <Header/>
+              
                  
                  <div className="container-fluid" style={{ marginBottom: '10%' }}>
  

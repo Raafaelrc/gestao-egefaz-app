@@ -13,6 +13,7 @@ import 'toastr/build/toastr.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Header from "../components/header/Header";
 
 
 
@@ -37,13 +38,13 @@ const ConsultarReserva = () => {
 }
 
 function Rotas() {
-    const [inactive, setInactive] = useState(true )
+    const [inactive, setInactive] = useState(true)
     return (
         <>
 
 
             <BrowserRouter>
-
+                <Header/>
                 <SideMenu onCollapse={(inactive) => {
                     setInactive(inactive)
 
@@ -69,7 +70,7 @@ function Rotas() {
 
                         <Route exact path={'/cadastrar-reserva'}>   <CadastrarReserva />   </Route>
                         <Route exact path={'/consultar-reserva'}>   <ConsultarReserva />   </Route> */}
-                       
+
 
 
                     </Switch>
