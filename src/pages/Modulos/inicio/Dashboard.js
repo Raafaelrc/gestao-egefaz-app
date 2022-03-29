@@ -1,12 +1,14 @@
 import React from "react"
 
-import Header from "../../../components/header/Header"
+import iconeFolga from '../../../assets/ICONE FOLGA.svg'
+import iconeServidores from '../../../assets/ICONE SERVIDORES.svg'
+import iconePatrimonio from '../../../assets/ICONE PATRIMONIO.svg'
+import iconeHotelaria from '../../../assets/ICONE HOTELARIA.svg'
 import { Card } from "@mui/material";
 import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+
 
 
 
@@ -37,17 +39,15 @@ const DashBoard = () => {
 
                                 <Card className="buttoncard" style={{ margin: '5px' }} sx={{ maxWidth: 345 }}>
                                     <CardMedia
+                                   
                                         component="img"
                                         alt="Folga"
-                                        height="140"
-                                        image="/static/images/cards/contemplative-reptile.jpg"
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            Folga
-                                        </Typography>
+                                        height="250"
+                                        image={iconeFolga}
 
-                                    </CardContent>
+                                        style={{padding:'10px'}}
+                                    />
+                                  
                                     <CardActions>
                                         <Button style={{ fontSize: '0.6rem' }}>Cadastrar</Button>
                                         <Button style={{ fontSize: '0.6rem' }}>Consultar</Button>
@@ -58,15 +58,11 @@ const DashBoard = () => {
                                     <CardMedia
                                         component="img"
                                         alt="Servidor"
-                                        height="140"
-                                        image="/static/images/cards/contemplative-reptile.jpg"
+                                        height="250"
+                                        image={iconeServidores}
+                                        style={{padding:'10px'}}
                                     />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            Servidor
-                                        </Typography>
-
-                                    </CardContent>
+                                  
                                     <CardActions>
                                         <Button style={{ fontSize: '0.6rem' }}>Cadastrar</Button>
                                         <Button style={{ fontSize: '0.6rem' }}>Consultar</Button>
@@ -77,15 +73,10 @@ const DashBoard = () => {
                                     <CardMedia
                                         component="img"
                                         alt="Patrimônio"
-                                        height="140"
-                                        image="/static/images/cards/contemplative-reptile.jpg"
+                                        height="250"
+                                        image={iconePatrimonio}
+                                        style={{padding:'10px'}}
                                     />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            Patrimônio
-                                        </Typography>
-
-                                    </CardContent>
                                     <CardActions>
                                         <Button style={{ fontSize: '0.6rem' }}>Cadastrar</Button>
                                         <Button style={{ fontSize: '0.6rem' }}>Consultar</Button>
@@ -96,15 +87,11 @@ const DashBoard = () => {
                                     <CardMedia
                                         component="img"
                                         alt="Hotelaria"
-                                        height="140"
-                                        image="/static/images/cards/contemplative-reptile.jpg"
+                                        height="250"
+                                        image={iconeHotelaria}
+                                        style={{padding:'10px'}}
                                     />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="div">
-                                            Hotelaria
-                                        </Typography>
-
-                                    </CardContent>
+                                    
                                     <CardActions>
                                         <Button style={{ fontSize: '0.6rem' }}>Cadastrar</Button>
                                         <Button style={{ fontSize: '0.6rem' }}>Consultar</Button>
